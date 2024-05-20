@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    /* Add your CSS here */
-  </style>
-</head>
-<body>
-  <div>This is a div</div>
-  <div class="box">This div has a class "box"</div>
-  <span>This is a span</span>
-  <button>Click me</button>
-  <input type="text" required>
-  <input type="checkbox" checked>
-  <input type="radio" disabled>
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
-    <li>Item 5</li>
-  </ul>
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <div>
-    <span>
-      <b>nested text</b>
-    </span>
-  </div>
-</body>
+  <head>
+    <style>
+      /* styling a descendant selector */
+      div span b {
+        color: purple;
+      }
+      /* styling a direct child */
+      ul > li {
+        font-weight: bold;
+      }
+      /* styling a sibling selector */
+      ul ~ a {
+        color: green;
+      }
+      /* Style for checked check boxes */
+      input[type="checkbox"]:checked {
+        background-color: yellow !important; /* Using !important to ensure override */
+        -webkit-appearance: none; /* Disables native styling */
+        appearance: none;
+        width: 20px; /* Custom size */
+        height: 20px; /* Custom size */
+      }
+      input[type="checkbox"]:checked:after {
+        content: "✓";
+        display: block;
+        color: black;
+        position: relative;
+        left: 5px; /* Center the check mark */
+        top: -3px;
+      }
+      input:focus {
+        border: 2px solid red;
+      }
+      /* Styling for disabled inputs */
+      input:disabled {
+        background-color: gray;
+        color: white;
+      }
+      /* Styling the first child of a list */
+      ul li:first-child {
+        background-color: blue;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:last-of-type {
+        text-decoration: underline;
+      }
+      /* using the 'not' selelctor */
+      ul li:not(:first-child) {
+        color: orange;
+      }
+      input[type="text"][required] {
+        box-shadow: 1px 1px 5px black;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid black;
+      }
+    </style>
+    <title>Hands on Selectors 2</title>
+  </head>
+  <body>
+    <div>This is a div</div>
+    <div class="box">This div has a class "box"</div>
+    <span>This is a span</span>
+    <button>Click me</button>
+    <input type="text" required />
+    <input type="checkbox" checked />
+    <input type="radio" disabled />
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <div>
+      <span>
+        <b>nested text</b>
+      </span>
+    </div>
+  </body>
 </html>
